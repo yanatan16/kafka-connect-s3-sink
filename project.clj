@@ -1,4 +1,4 @@
-(defproject kafka-connect-s3-sink "0.1.1-SNAPSHOT"
+(defproject kafka-connect-s3-sink "0.1.1"
   :description "Kafka Connector Sink to push records to s3"
   :url "https://github.com/yanatan16/kafka-connect-s3-sink"
   :license {:name "MIT"
