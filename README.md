@@ -21,7 +21,8 @@ The `connector.class` is `org.clojars.yanatan16.kafka.connect.s3.S3SinkConnector
 
 It has the following custom configurations (above and beyond the [normal sink configurations](http://docs.confluent.io/2.0.0/connect/userguide.html#configuring-connectors)).
 
-- `s3.filename` An JSON vector of get-in keys, such as `["value", "id"]` to get the `id` field in the record value. Or the key itself: `["key"]`. (Required)
+- `filename.path.json` An JSON vector of get-in keys, such as `["key", "id"]` to get the `id` field in the record key. Or the key itself: `["key"]`. (Required)
+- `content.path.json` An JSON vector of get-in keys, such as `["value","data"]` to get the `data` field in the record value. Or the value itself: `["value"]`. If this points to a string, the string itself will be written, otherwise it will be JSON encoded. (Required)
 - `s3.bucket` S3 Bucket (required)
 - `s3.prefix` Prefix on the filename (possibly a directory, defaults to empty string)
 - `aws.access_key_id` AWS Access Key ID
