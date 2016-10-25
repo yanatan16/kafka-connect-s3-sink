@@ -19,7 +19,7 @@
    (:filename.path.json :type/string ::cfg/no-default-value
                         json-path-validator :importance/high
                         "JSON path of nested keys to get the filename of the record. Can include numbers for array references. First key should be either \"key\" or \"value\".")
-   #_(:content.path.json :type/string "[\"value\"]"
+   (:content.path.json :type/string "[\"value\"]"
                        json-path-validator :importance/medium
                        "JSON path of nested keys to get content of the record. Can include numbers for array references. First key should be either \"key\" or \"value\". Defaults to [\"value\"].")
    (:s3.bucket :type/string ::cfg/no-default-value :importance/high
