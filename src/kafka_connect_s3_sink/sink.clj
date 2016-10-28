@@ -51,7 +51,8 @@
 
   :put-1 (fn [cfg record]
            (log/debugf "Pushing kafka record %s" (pr-str record))
-           (put-record cfg record))}
+           (put-record cfg record)
+           cfg)}
 
  {:config-def config
   :start (fn [cfg _]
