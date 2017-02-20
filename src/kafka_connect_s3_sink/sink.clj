@@ -21,7 +21,9 @@
 (defn put-record [{:keys [bucket creds] :as cfg} record]
   (let [content (get-record-content cfg record)
         filename (get-record-filename cfg record)]
-    (s3/put-object creds bucket filename content)))
+    (if (and filename content)
+      (s3/put-object creds bucket filename content)
+      (log/warn "Found an illegal record with a null filename or contents."))))
 
 (defn make-creds [cfg]
   {:access-key (:aws.access_key_id cfg)
